@@ -10,7 +10,7 @@ module.exports = {
     utterances: {
       repo: meta.utterances,
     },
-    postTitle: 'All',
+    postTitle: '전체 게시물',
     menuLinks: [
       {
         link: '/',
