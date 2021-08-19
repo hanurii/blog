@@ -151,11 +151,13 @@ export const query = graphql`
         desc
         thumbnail {
           childImageSharp {
+            id
             fixed {
               src
             }
           }
         }
+        alt
         date(formatString: "YYYY-MM-DD")
         category
       }
