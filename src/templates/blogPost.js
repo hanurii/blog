@@ -4,20 +4,23 @@ import styled from 'styled-components';
 import Layout from 'layout/layout';
 import SEO from 'components/seo';
 import Comment from 'components/comment';
+import CenteredImg from '../components/postGrid/centeredImg';
 import { rhythm } from 'styles/typography';
 import Category from 'styles/category';
 import DateTime from 'styles/dateTime';
 import Markdown from 'styles/markdown';
+import convertToKorDate from 'utils/convertToKorDate';
 
 const BlogPost = ({ data }) => {
   const {
     markdownRemark: {
-      frontmatter: { title, desc, thumbnail, date, category },
+      frontmatter: { title, desc, thumbnail, alt, date, category },
       html,
     },
   } = data;
 
   const ogImagePath = thumbnail && thumbnail.childImageSharp.fixed.src;
+  const korDate = convertToKorDate(date);
 
   return (
     <Layout>
@@ -30,12 +33,15 @@ const BlogPost = ({ data }) => {
                 <header>
                   <Info>
                     <PostCategory>{category}</PostCategory>
-                    <Time dateTime={date}>{date}</Time>
+                    <Time dateTime={date}>{korDate}</Time>
                   </Info>
                   <Title>{title}</Title>
                   <Desc>{desc}</Desc>
                 </header>
                 <Divider />
+                <ImageWrapper>
+                  <CenteredImg src={thumbnail.childImageSharp.id} alt={alt} />
+                </ImageWrapper>
                 <Markdown
                   dangerouslySetInnerHTML={{ __html: html }}
                   rhythm={rhythm}
@@ -51,6 +57,12 @@ const BlogPost = ({ data }) => {
     </Layout>
   );
 };
+
+const ImageWrapper = styled.div`
+  margin-bottom: var(--sizing-xl);
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+`;
 
 const OuterWrapper = styled.div`
   margin-top: var(--sizing-xl);
