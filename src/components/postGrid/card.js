@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import CenteredImg from './centeredImg';
 import Category from 'styles/category';
 import DateTime from 'styles/dateTime';
+import convertToKorDate from 'utils/convertToKorDate';
 
 const Card = ({ thumbnail, alt, category, title, desc, date }) => {
   return (
@@ -14,7 +15,7 @@ const Card = ({ thumbnail, alt, category, title, desc, date }) => {
           <Title>{title}</Title>
           <Desc>{desc}</Desc>
         </div>
-        <DateTime dateTime={date}>{date}</DateTime>
+        <DateTime dateTime={date}>{convertToKorDate(date)}</DateTime>
       </Text>
     </Wrapper>
   );

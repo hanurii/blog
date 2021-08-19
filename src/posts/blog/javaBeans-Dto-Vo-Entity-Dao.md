@@ -1,9 +1,9 @@
 ---
-title: "JavaBeans, DTO, VO, Entity, DAO 가 헷갈린다면"
-category: "ETC"
+title: "JavaBeans, DTO, VO, Entity, DAO 에 대해 알아보자"
+category: "Java"
 date: "2020-06-17"
 desc: "우아한 CRUD 에서 다룬 내용을 정리했습니다"
-thumbnail: "./images/javaBeans-Dto-Vo-Entity-Dao/thumbnail.jpg"
+thumbnail: "./images/default.jpg"
 alt: "우아한 CRUD 에서 다룬 JavaBeans, DTO, VO, Entity, DAO 객체의 사용법과 차이를 정리했습니다"
 ---
 
